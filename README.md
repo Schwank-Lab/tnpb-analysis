@@ -1,8 +1,13 @@
 # tnpb-analysis
 
-Analysis code for the directed evolution of IsDra2 TnpB: PacBio long-read genotyping of
-evolving phage populations, and Illumina-based pooled self-targeting screens in mammalian
-cells.
+Analysis code for:
+
+> **Directed evolution yields an IsDra2 TnpB variant with enhanced editing activity**
+> <!-- Paper link: add the DOI / journal URL here once published -->
+> [Link to paper](ADD_PAPER_LINK_HERE)
+
+PacBio long-read genotyping of evolving phage populations, and Illumina-based pooled
+self-targeting screens in mammalian cells.
 
 ## Layout
 
