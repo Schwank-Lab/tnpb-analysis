@@ -1,0 +1,4 @@
+# Bulk intermediates (SAM, aligned FASTA) stay out; the per-sample amino-acid
+# distribution tables are small and are what 07_mutation_analysis.ipynb reads.
+out/*
+!out/aa_dist/

@@ -1,0 +1,44 @@
+# Environment for the TnpB PacBio genotyping and cell screening analyses.
+#
+#   conda env create -f environment.yml
+#   conda activate tnpb-analysis
+#
+# Versions that affect the reported numbers are pinned exactly. `bwa` in
+# particular is pinned deliberately: alignment of long, noisy reads is sensitive
+# to the release, and read counts shift by a few percent between versions.
+# Plotting and notebook packages are given as lower bounds.
+name: tnpb-analysis
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - python=3.10
+
+  # external tools called by the pipelines
+  - bwa=0.7.19
+  - fastqc=0.12.1
+
+  # libraries that determine the reported values
+  - biopython=1.85
+  - numpy=2.2.5
+  - pandas=2.3.3
+  - parasail-python=1.3.4
+  - pysam=0.22.1
+  - scipy>=1.11
+
+  # statistics, i/o, plotting, notebooks
+  - openpyxl>=3.1
+  - matplotlib>=3.9
+  - seaborn>=0.13
+  - plotly>=5.20
+  - logomaker>=0.8
+  - ipykernel
+  - jupyterlab
+
+  # workflow runner; only needed to re-run the read-processing pipelines
+  - pip
+  - pip:
+      - prefect>=3,<4
+      - prefect-dask>=0.3   # task runner for the A9 and A13 flows
